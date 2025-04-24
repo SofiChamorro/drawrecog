@@ -31,15 +31,7 @@ with st.sidebar:
     st.subheader("Acerca de:")
     st.subheader("En esta aplicación veremos la capacidad que ahora tiene una máquina de interpretar un boceto")
 st.subheader("Dibuja el boceto en el panel  y presiona el botón para analizarla")
-with st.sidebar:
-  st.subheader("Propiedades")
-  drawing_mode = st.sidebar.selectbox(
-    "formas para dibujar",
-  ("freedraw","line","rect","circle","transform","polygon","point"),
-  )
-  stroke_width= st.slider('Selecciona el ancho', 1,30,15)
-  stroke_color= st.color_picker("color de trazo","#ffffff")
-  bg_color= st.color_picker("color de fondo","#ffffff")
+
 
 # Add canvas component
 #bg_image = st.sidebar.file_uploader("Cargar Imagen:", type=["png", "jpg"])
