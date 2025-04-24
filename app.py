@@ -36,13 +36,16 @@ st.subheader("Dibuja el boceto en el panel  y presiona el botón para analizarla
 # Add canvas component
 #bg_image = st.sidebar.file_uploader("Cargar Imagen:", type=["png", "jpg"])
 # Specify canvas parameters in application
-drawing_mode = "freedraw"
-stroke_width = st.sidebar.slider('Selecciona el ancho de línea', 1, 30, 5)
-#stroke_color = '#FFFFFF' # Set background color to white
-#bg_color = '#000000'
-stroke_color = "#000000" 
-bg_color = '#FFFFFF'
-#realtime_update = st.sidebar.checkbox("Update in realtime", True)
+with st.sidebar:
+    st.subheader("Opciones de dibujo")
+    drawing_mode = st.selectbox(
+        "Modo de dibujo",
+        ("freedraw", "line", "rect", "circle", "transform", "polygon", "point")
+    )
+    stroke_width = st.slider("Ancho de trazo", 1, 30, 5)
+    stroke_color = st.color_picker("Color de trazo", "#000000")
+    bg_color = st.color_picker("Color de fondo", "#FFFFFF")
+
 
 
 # Create a canvas component
